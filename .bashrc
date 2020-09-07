@@ -142,3 +142,4 @@ stty stop undef
 alias deploy='~/cco/webapp/go/script/deploy.sh'
 alias applog='sudo journalctl -f -u cco.golang'
 
+alias mycnf='sudo cp ~/etc/mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf'
