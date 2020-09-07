@@ -13,6 +13,8 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/gorilla/websocket"
 	"github.com/jmoiron/sqlx"
+
+	_ "net/http/pprof"
 )
 
 var (
@@ -93,6 +95,10 @@ func wsGameHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	go func() {
+		log.Println(http.ListenAndServe("localhost:6060", nil))
+	}()
+
 	log.SetFlags(log.LstdFlags | log.Lshortfile)
 	initDB()
 

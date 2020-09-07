@@ -16,3 +16,4 @@ bench/
 go/pkg/
 go/src/
 go/bin/
+pprof/
